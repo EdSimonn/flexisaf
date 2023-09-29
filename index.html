@@ -1,0 +1,59 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>FlexiSaf Array Operations</h1>
+    <p>Open console to see array operations in action.</p>
+
+    <script>
+      // Use of 'let' and 'const' for variable declaration
+      let count = 0;
+      const maxCount = 5;
+
+      //arrow function
+      const increment = () => {
+        if (count < maxCount) {
+          count++;
+        }
+      };
+
+      //array of objects
+      const users = [
+        { id: 1, name: "Alice" },
+        { id: 2, name: "Bob" },
+        { id: 3, name: "Charlie" },
+        { id: 4, name: "David" },
+      ];
+
+      //'map' array method to create a new array called 'userNames' containing only the names of users
+      const userNames = users.map((user) => user.name);
+      console.log("User Names:", userNames);
+
+      //'filter' to create an array with only users with even 'id'
+      const filteredUsers = users.filter((user) => user.id % 2 === 0);
+      console.log("Filtered Users:", filteredUsers);
+
+      //'reduce' to calculate the sum of all users ids
+      const totalIds = users.reduce((sum, user) => sum + user.id, 0);
+      console.log("Total IDs:", totalIds);
+
+      //'forEach' to iterate through the array and log each 'id' and 'name' on the console
+      users.forEach((user) => {
+        console.log(`User ${user.id}: ${user.name}`);
+      });
+
+      //'let' and 'const' variables within the same scope
+      console.log("Count:", count);
+      console.log("Max Count:", maxCount);
+
+      // Attempting to change a 'const' variable will result in an error
+      // maxCount = 10; // Uncommenting this line will result in an error
+    </script>
+  </body>
+</html>
